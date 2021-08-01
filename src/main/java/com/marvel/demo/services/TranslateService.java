@@ -1,6 +1,6 @@
 package com.marvel.demo.services;
 
-import com.marvel.demo.config.TranslateAPI;
+import com.marvel.demo.config.TranslateAPIConfiguration;
 import com.marvel.demo.translation.TranslateResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,10 +16,10 @@ import java.net.URI;
 @AllArgsConstructor
 public class TranslateService {
 	private final WebClient webClient;
-	private final TranslateAPI translateAPI;
+	private final TranslateAPIConfiguration translateAPI;
 
 	public Mono<String> translateString(String stringToTranslate, String languageCode) {
-		URI uri = UriComponentsBuilder.fromUriString(translateAPI.getUrl())
+		URI uri = UriComponentsBuilder.fromUriString(translateAPI.getEndpoint())
 				.queryParam("key", translateAPI.getKey())
 				.queryParam("q", stringToTranslate)
 				.queryParam("source", "en")

@@ -1,6 +1,6 @@
 package com.marvel.demo.services;
 
-import com.marvel.demo.config.TranslateAPI;
+import com.marvel.demo.config.TranslateAPIConfiguration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.when;
 public class TranslateServiceTest
 {
 	@Mock
-	TranslateAPI translateAPI;
+	TranslateAPIConfiguration translateAPI;
 	WebClient webClient;
 
 	TranslateService classUnderTest;
@@ -43,7 +43,7 @@ public class TranslateServiceTest
 	public void testGetCharacterById()
 	{
 		when(translateAPI.getKey()).thenReturn("Key");
-		when(translateAPI.getUrl()).thenReturn("Url");
+		when(translateAPI.getEndpoint()).thenReturn("Url");
 
 		when(exchangeFunction.exchange(any(ClientRequest.class)))
 				.thenReturn(Mono.just(ClientResponse.create(HttpStatus.OK)
