@@ -1,4 +1,4 @@
-package com.marvel.demo.translation;
+package com.marvel.demo.model;
 
 import com.fasterxml.jackson.annotation.*;
 import lombok.ToString;

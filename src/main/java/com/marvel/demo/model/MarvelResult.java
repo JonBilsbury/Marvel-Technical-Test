@@ -1,4 +1,4 @@
-package com.marvel.demo.character;
+package com.marvel.demo.model;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,17 +12,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class MarvelResult
 {
 	@JsonProperty("data")
-	private Data data;
+	private MarvelData marvelData;
 
 	@JsonProperty("data")
-	public Data getData()
+	public MarvelData getData()
 	{
-		return data;
+		return marvelData;
 	}
 
 	@JsonProperty("data")
-	public void setData(Data data)
+	public void setData(MarvelData marvelData)
 	{
-		this.data = data;
+		this.marvelData = marvelData;
 	}
 }

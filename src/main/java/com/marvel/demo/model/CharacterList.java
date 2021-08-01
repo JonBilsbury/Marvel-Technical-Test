@@ -1,4 +1,4 @@
-package com.marvel.demo.character;
+package com.marvel.demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

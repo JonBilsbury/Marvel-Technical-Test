@@ -1,4 +1,4 @@
-package com.marvel.demo.character;
+package com.marvel.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,18 +1,16 @@
 package com.marvel.demo.controller;
 
-import com.marvel.demo.character.Result;
+import com.marvel.demo.model.Result;
 import com.marvel.demo.services.MarvelService;
 import com.marvel.demo.services.TranslateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +24,9 @@ public class MarvelController {
 
 	@GetMapping("/characters")
 	public Mono<List<String>> characters() {
-		return marvelService.getAllCharacterIds().flatMapIterable(a -> a).map(Result::getId).collectList();
+		return marvelService.getAllCharacterIds()
+			.flatMapIterable(a -> a)
+			.map(Result::getId).collectList();
 	}
 
 	@GetMapping("/characters/{characterId}")

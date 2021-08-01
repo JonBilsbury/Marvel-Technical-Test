@@ -1,4 +1,4 @@
-package com.marvel.demo.translation;
+package com.marvel.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -17,7 +17,7 @@ import java.util.Map;
 		"translations"
 })
 @ToString
-public class Data
+public class TranslateData
 {
 	@JsonProperty("translations")
 	private List<Translation> translations = null;

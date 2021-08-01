@@ -1,7 +1,7 @@
 package com.marvel.demo.services;
 
 import com.marvel.demo.config.TranslateAPIConfiguration;
-import com.marvel.demo.translation.TranslateResponse;
+import com.marvel.demo.model.TranslateResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -33,6 +33,6 @@ public class TranslateService {
 				.bodyToMono(TranslateResponse.class)
 				.doOnError(e -> log.error("Error occurred on translating the string {}", e.getMessage(), e))
 				.doOnSuccess(data -> log.debug("Description has successfully been translated {}", data))
-				.map(translateResponse -> translateResponse.getData().getTranslations().get(0).getTranslatedText());
+				.map(translateResponse -> translateResponse.getTranslateData().getTranslations().get(0).getTranslatedText());
 	}
 }

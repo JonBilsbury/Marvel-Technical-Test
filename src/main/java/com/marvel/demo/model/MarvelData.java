@@ -1,4 +1,4 @@
-package com.marvel.demo.character;
+package com.marvel.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,7 +14,7 @@ import java.util.List;
 		"count",
 		"results"
 })
-public class Data
+public class MarvelData
 {
 	@JsonProperty("offset")
 	private String offset;

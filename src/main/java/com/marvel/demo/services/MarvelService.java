@@ -1,7 +1,7 @@
 package com.marvel.demo.services;
 
-import com.marvel.demo.character.MarvelResult;
-import com.marvel.demo.character.Result;
+import com.marvel.demo.model.MarvelResult;
+import com.marvel.demo.model.Result;
 import com.marvel.demo.config.CacheConfiguration;
 import com.marvel.demo.config.MarvelAPIConfiguration;
 import com.marvel.demo.utils.MarvelUtils;

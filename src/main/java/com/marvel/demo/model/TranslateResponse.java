@@ -1,4 +1,4 @@
-package com.marvel.demo.translation;
+package com.marvel.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -18,18 +18,18 @@ import java.util.Map;
 @ToString
 public class TranslateResponse {
 	@JsonProperty("data")
-	private Data data;
+	private TranslateData translateData;
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<>();
 
 	@JsonProperty("data")
-	public Data getData() {
-		return data;
+	public TranslateData getTranslateData() {
+		return translateData;
 	}
 
 	@JsonProperty("data")
-	public void setData(Data data) {
-		this.data = data;
+	public void setTranslateData(TranslateData translateData) {
+		this.translateData = translateData;
 	}
 
 	@JsonAnyGetter
