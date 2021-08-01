@@ -29,12 +29,9 @@ As it is a spring boot application with maven, this means it is quite flexible i
 The project can be imported to an IDE, in my case, this is IntelliJ but I believe it should be able to be imported into any and re-configured to work within that. Once the project is imported into the IDE, it can then be ran from `MarvelTechTestApplication` and this will start the spring boot web server on localhost:8080.
 
 ## Command-line
-The project can be ran through command-line by making use of maven. In the command window, navigate to the uncompressed folder containing all of the code but ensure it is the root, you can do this by checking that the pom.xml is contained here (DIR command on windows to list the files in the current directory). Once here, you can run the commandd `mvn spring-boot:run` and this should allow maven to trigger the server to run.
+The project can be ran through command-line by making use of maven. Ensure that maven is installed alongside a version of Java greater than 14. In the command window, navigate to the uncompressed folder containing all of the code but ensure it is the root, you can do this by checking that the pom.xml is contained here (DIR command on windows to list the files in the current directory). Once here, you can run the commandd `mvn spring-boot:run` and this should allow maven to trigger the server to run.
 
 # Improvements
-## Code Structure
-The code could probably be better re-factored to be more modular and allow the re-use of methods. This could be done to allow all of the marvel API services to be more consistent with eachother and allow the re-use of code inside of them where appropriate.
-
 ## Documentation
 JavaDocs need to be added on the public methods and classes to demonstrate what they do. This would aide in expanding out the project without having to gain full knowledge of what each method does. This isn't currently in place due to the scope of the project and only having 4 classes which actually contain any logic.
 

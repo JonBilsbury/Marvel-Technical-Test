@@ -43,11 +43,11 @@ public class MarvelService {
 
 		return Optional.ofNullable(cache.get("characters", List.class))
 				.map(data -> {
-					log.info("Character data found in cache.");
+					log.debug("Character data found in cache.");
 					return Mono.just((List<Result>) data);
 				})
 				.orElseGet(() -> {
-					log.info("No character data found in the cache");
+					log.debug("No character data found in the cache");
 					log.debug("Fetching all character IDs from api");
 					WebClient webClient = getWebClient();
 					return getMarvelResult(buildUri(marvelAPI.getUrl(), "0"))
@@ -69,7 +69,7 @@ public class MarvelService {
 							.flatMap(Flux::fromStream)
 							.collectList()
 							.doOnSuccess(results -> {
-								log.info("successfully retrieved all marvel ids");
+								log.debug("successfully retrieved all marvel ids");
 								cache.put("characters", results);
 							});
 				});
